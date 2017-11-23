@@ -1,0 +1,9 @@
+tomcat-jenkins:
+  build: .
+  ports:
+    - 8080:8080
+  volumes:
+    - /var/run/docker/libcontainerd/docker-containderd.sock:/var/run/docker/libcontainerd/docker-containderd.sock
+    - /var/run/docker.sock:/var/run/docker.sock
+    - ./tomcat:/usr/share/tomcat/.jenkins/
+    - ./.ssh:/usr/share/tomcat/.ssh
